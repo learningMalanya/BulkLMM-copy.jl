@@ -10,6 +10,10 @@ function colCenter!(A::Matrix{Float64})
 
     (n,m) = size(A)
 
+    if(n == 1)
+        throw(error("Each column should contain at least two elements to average from!"))
+    end
+
     # get mean of each column; convert to vector
     colMeans = mean(A,dims=1) |> vec
 
@@ -24,6 +28,10 @@ end
 function rowCenter!(A::Matrix{Float64})
 
     (n,m) = size(A)
+
+    if(m == 1)
+        throw(error("Each row should contain at least two elements to average from!"))
+    end
 
     # get mean of each column; convert to vector
     rowMeans = mean(A,dims=2) |> vec
@@ -47,7 +55,7 @@ function checkZeros(x::Vector{Float64})
     return false
 end
 
-function colDivide!(A::Matrix{Float64},x::Vector{Float64})
+function colDivide!(A::Matrix{Float64}, x::Vector{Float64})
 
     (n,m) = size(A)
 
@@ -61,9 +69,7 @@ function colDivide!(A::Matrix{Float64},x::Vector{Float64})
     if(checkZeros(x))
         throw(error("Dividing by zeros: the input vector can not contain any zeros!"))
     end
-
-
-
+    
     for i=1:n
         for j=1:m
             A[i,j] = A[i,j]/x[j]
@@ -79,7 +85,7 @@ function colStandardize!(A::Matrix{Float64})
 
 end
 
-function rowDivide!(A::Matrix{Float64},x::Vector{Float64})
+function rowDivide!(A::Matrix{Float64}, x::Vector{Float64})
 
     (n,m) = size(A)
 
@@ -101,7 +107,7 @@ function rowDivide!(A::Matrix{Float64},x::Vector{Float64})
     end
 end
 
-function rowMultiply(A::Matrix{Float64},x::Vector{Float64})
+function rowMultiply(A::Matrix{Float64}, x::Vector{Float64})
 
     (n,m) = size(A)
     if(length(x)!=n)
@@ -124,27 +130,29 @@ end
 perform random shuffles of vector
 the first column is the original vector if original=true
 """
-function shuffleVector(rng::AbstractRNG,x::Vector{Float64},
-                 nshuffle::Int64,original::Bool=true)
+function shuffleVector(rng::AbstractRNG, x::Vector{Float64}, nshuffle::Int64;
+                       original::Bool = true)
     if(original)
-        xx = zeros(length(x),nshuffle+1)
+        xx = zeros(length(x), nshuffle+1)
         xx[:,1] = x
         istart = 1
     else
-        xx = zeros(length(x),nshuffle)
+        xx = zeros(length(x), nshuffle)
+
         istart = 0
     end
 
-    for i=1:nshuffle
-        xx[:,i+istart] = shuffle(rng,x)
+    for i = 1:nshuffle
+        xx[:, i+istart] = shuffle(rng,x)
     end
 
     return xx
 end
 
+## Compare two arrays and return the number of elements with the same indices of each array and are match
 function compareValues(x_true::Array{Float64,1}, x::Array{Float64,1}, tolerance::Float64, threshold::Float64)
     if size(x_true) != size(x)
-        error("Dimention Mismatch! Must compare two arrays of same length!")
+        throw(error("Dimention Mismatch! Must compare two arrays of same length!"))
     end
 
     passes = falses(size(x_true))
