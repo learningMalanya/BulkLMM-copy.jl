@@ -8,7 +8,7 @@ output: pdf_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 rm(list = ls())
-setwd("/Users/zifanyu/Documents/GitHub/BulkLMM_test/test")
+setwd("/Users/zifanyu/Documents/GitHub/BulkLMM.jl/test/notebooks/lmmlite_R")
 ```
 
 
@@ -38,16 +38,15 @@ getwd()
 
 ```{r read-in-data, echo = T}
 
-pheno = read.csv("../../data/BXDpheno.csv")
-geno = read.csv("../../data/BXDgeno.csv")
-K = read.csv("../../data/BXDkinship.csv")
+pheno = read.csv("processed_bxdData/BXDpheno.csv")
+geno = read.csv("processed_bxdData/BXDgeno.csv")
+K = read.csv("processed_bxdData/BXDkinship.csv")
 
 ```
 
 ```{r type-conversion, echo = T}
 
-pheno_1 = pheno[, 1]
-pheno_2 = pheno[, 2]
+pheno_y = pheno[, 7919]
 K_mat = data.matrix(K)
 geno_mat = data.matrix(geno)
 
@@ -59,8 +58,7 @@ Here we will only consider scanning the second quantitative trait for comparing 
 
 ```{r run-model-rotate-null, echo = T}
 
-# e_null = eigen_rotation(K_mat, pheno_1, NULL)
-e_null = eigen_rotation(K_mat, pheno_2, NULL)
+e_null = eigen_rotation(K_mat, pheno_y, NULL)
 
 ```
 
@@ -75,8 +73,8 @@ n = nrow(geno_mat)
 p = ncol(geno_mat)
 
 
-params_null = fitLMM(e_null$Kva, e_null$y, e_null$X, reml = T)
-## params_null = fitLMM(e_null$Kva, e_null$y, e_null$X, reml = F)
+## params_null = fitLMM(e_null$Kva, e_null$y, e_null$X, reml = T)
+params_null = fitLMM(e_null$Kva, e_null$y, e_null$X, reml = F)
 est_hsq = params_null$hsq
 est_sigmasq = params_null$sigmasq
 
@@ -115,8 +113,8 @@ run_model = function(K_eVals, K_eVects, Gj, y, hsq){
   Gj_star1 = K_eVects %*% Gj
   
   # Get RSS:
-  ml_soln = getMLsoln(hsq, K_eVals, y_star1, Gj_star1, reml = T)
-  # ml_soln = getMLsoln(hsq, K_eVals, y_star1, Gj_star1, reml = F)
+  # ml_soln = getMLsoln(hsq, K_eVals, y_star1, Gj_star1, reml = T)
+  ml_soln = getMLsoln(hsq, K_eVals, y_star1, Gj_star1, reml = F)
   
   
   
@@ -148,8 +146,8 @@ list_Gj = construct_Gj(geno)
 ## est_hsq = 
 ###
 
-results_null = getMLsoln(est_hsq, e_null$Kva, e_null$y, e_null$X, reml = T)
-# results_null = getMLsoln(est_hsq, e_null$Kva, e_null$y, e_null$X, reml = F)
+# results_null = getMLsoln(est_hsq, e_null$Kva, e_null$y, e_null$X, reml = T)
+results_null = getMLsoln(est_hsq, e_null$Kva, e_null$y, e_null$X, reml = F)
 
 
 list_RSS = rep(NA, p+1)
@@ -160,8 +158,7 @@ list_ml_solns = list(results_null)
 
 for(j in 1:p){
   
-# ml_soln = run_model(K_eVals, K_eVects, list_Gj[[j]], pheno_1, est_hsq)
-  ml_soln = run_model(K_eVals, K_eVects, list_Gj[[j]], pheno_2, est_hsq)
+  ml_soln = run_model(K_eVals, K_eVects, list_Gj[[j]], pheno_y, est_hsq)
   rss = attributes(ml_soln)$rss
   
   list_ml_solns[[j+1]] = ml_soln
@@ -221,8 +218,8 @@ for(j in 1:p){
 rownames(results_lmmlite) = rownames
 kable(head(results_lmmlite))
 
-# write.csv(results_lmmlite, "../output/result.lmmlite_REML.csv")
-# write.csv(results_lmmlite, "../output/result.lmmlite_ML.csv")
+# write.csv(results_lmmlite, "output/result.lmmlite_REML.csv")
+write.csv(results_lmmlite, "output/result.lmmlite_ML.csv")
 
 ```
 
