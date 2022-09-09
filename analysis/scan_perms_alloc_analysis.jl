@@ -39,4 +39,4 @@ p = size(geno, 2); # number of markers
 ## Consider the 7919-th trait
 pheno_y = reshape(pheno[:, 7919], :, 1);
 
-@profview scan_perms(pheno_y, geno, kinship; nperms = 1000);
+scan_perms(pheno_y, geno, kinship; nperms = 1000);
