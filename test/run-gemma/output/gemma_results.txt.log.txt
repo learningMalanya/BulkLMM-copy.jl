@@ -1,0 +1,37 @@
+##
+## GEMMA Version    = 0.98.5 (2021-08-25)
+## Build profile    = /gnu/store/8rvid272yb53bgascf5c468z0jhsyflj-profile
+## GCC version      = 7.5.0
+## GSL Version      = 2.6
+## OpenBlas         = OpenBLAS 0.3.9  - OpenBLAS 0.3.9 DYNAMIC_ARCH NO_AFFINITY Haswell MAX_THREADS=128
+##   arch           = Haswell
+##   threads        = 32
+##   parallel type  = threaded
+##
+## Command Line Input = /home/xyu/software/GEMMA/gemma-0.98.5-linux-static-AMD64 -g /home/xyu/github/BulkLMM.jl/test/run-gemma/BXDgeno_prob_bimbam.txt -p /home/xyu/github/BulkLMM.jl/test/run-gemma/BXDpheno_bimbam.txt -k output/kinship.cXX.txt -lmm 1 -o gemma_results.txt 
+##
+## Date = Thu Sep 29 16:52:25 2022
+##
+## Summary Statistics:
+## number of total individuals = 79
+## number of analyzed individuals = 79
+## number of covariates = 1
+## number of phenotypes = 1
+## number of total SNPs/var = 7321
+## number of analyzed SNPs/var = 7321
+## REMLE log-likelihood in the null model = -50.2408
+## MLE log-likelihood in the null model = -49.329
+## pve estimate in the null model = 0.813567
+## se(pve) in the null model = 0.0950615
+## vg estimate in the null model = 0.221055
+## ve estimate in the null model = 0.0490897
+## beta estimate in the null model =   11.2201
+## se(beta) =   0.0249277
+##
+## Computation Time:
+## total computation time = 0.159013 min 
+## computation time break down: 
+##      time on eigen-decomposition = 0.000659133 min 
+##      time on calculating UtX = 0.00373117 min 
+##      time on optimization = 0.0645301 min 
+##
