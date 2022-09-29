@@ -8,9 +8,9 @@
 ##   threads        = 32
 ##   parallel type  = threaded
 ##
-## Command Line Input = /home/xyu/software/GEMMA/gemma-0.98.5-linux-static-AMD64 -g BXDgeno_prob_bimbam.txt -p BXDpheno_bimbam.txt -gk 1 -o kinship 
+## Command Line Input = /home/xyu/software/GEMMA/gemma-0.98.5-linux-static-AMD64 -g /home/xyu/github/BulkLMM.jl/test/run-gemma/BXDgeno_prob_bimbam.txt -p /home/xyu/github/BulkLMM.jl/test/run-gemma/BXDpheno_bimbam.txt -gk 1 -o kinship 
 ##
-## Date = Thu Sep 29 14:59:38 2022
+## Date = Thu Sep 29 16:05:14 2022
 ##
 ## Summary Statistics:
 ## number of total individuals = 79
@@ -21,7 +21,7 @@
 ## number of analyzed SNPs/var = 7321
 ##
 ## Computation Time:
-## total computation time = 0.0653648 min 
+## total computation time = 0.041918 min 
 ## computation time break down: 
-##      time on calculating relatedness matrix = 0.00447217 min 
+##      time on calculating relatedness matrix = 0.00474752 min 
 ##
