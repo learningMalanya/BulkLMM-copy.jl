@@ -10,7 +10,7 @@
 ##
 ## Command Line Input = /home/xyu/software/GEMMA/gemma-0.98.5-linux-static-AMD64 -g /home/xyu/github/BulkLMM.jl/test/run-gemma/BXDgeno_prob_bimbam.txt -p /home/xyu/github/BulkLMM.jl/test/run-gemma/BXDpheno_bimbam.txt -k output/kinship.cXX.txt -lmm 1 -o gemma_results.txt 
 ##
-## Date = Thu Sep 29 16:52:25 2022
+## Date = Fri Sep 30 11:56:16 2022
 ##
 ## Summary Statistics:
 ## number of total individuals = 79
@@ -29,9 +29,9 @@
 ## se(beta) =   0.0249277
 ##
 ## Computation Time:
-## total computation time = 0.159013 min 
+## total computation time = 0.139844 min 
 ## computation time break down: 
-##      time on eigen-decomposition = 0.000659133 min 
-##      time on calculating UtX = 0.00373117 min 
-##      time on optimization = 0.0645301 min 
+##      time on eigen-decomposition = 0.000468567 min 
+##      time on calculating UtX = 0.00244133 min 
+##      time on optimization = 0.0635649 min 
 ##
