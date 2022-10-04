@@ -30,6 +30,7 @@ geno = readGenoProb_ExcludeComplements(geno_file);
 kinship = calcKinship(geno); # calculate k
 
 nperms = 1024; # number of permutated copies required;
+n = size(pheno, 1);
 m = size(pheno, 2);
 p = size(geno, 2); # number of markers
 
