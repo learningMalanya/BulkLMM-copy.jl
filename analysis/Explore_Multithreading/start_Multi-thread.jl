@@ -1,4 +1,4 @@
 using IJulia
-IJulia.installkernel("Julia 12 Threads", env=Dict(
-    "JULIA_NUM_THREADS" => "12",
+IJulia.installkernel("Julia 64 Threads", env=Dict(
+    "JULIA_NUM_THREADS" => "64",
 ))
