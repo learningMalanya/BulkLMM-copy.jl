@@ -10,12 +10,7 @@ using Test;
 using BenchmarkTools;
 using Random;
 
-include("../../src/scan.jl");
-include("../../src/lmm.jl");
-include("../../src/parallel_helpers.jl");
-include("../../src/util.jl");
-include("../../src/wls.jl");
-
+include("../../src/readData.jl");
 
 pheno_10441 = get_pheno("HSNIH-Palmer", "10441");
 geno_filename = "HSNIH-Palmer.he";
@@ -92,4 +87,4 @@ geno_prob_bimbam = hcat(marker_names, minor_allele, major_allele);
 
 geno_prob_bimbam = hcat(geno_prob_bimbam, geno_processed);
 geno_filename = "geno.txt";
-writedlm(geno_filename, geno_prob_bimbam);
+writeToFile(geno_prob_bimbam, geno_filename);
