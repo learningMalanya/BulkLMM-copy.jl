@@ -13,7 +13,7 @@ for p = 1:size(geno_mat, 1)
     
     if any(!isfinite, geno_mat[p, :])
         
-        NaN_to_remove[p] = 1
+        NaN_to_remove[p] = 1;
         
     end
     
