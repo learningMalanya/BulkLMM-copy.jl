@@ -21,6 +21,9 @@ end
 
 geno_mat = geno_mat[NaN_to_remove .!= 1, :];
 
+geno_sampleID = Helium.getcolnames(geno_filename);
+pheno_sampleID = pheno_10441.sample_name;
+
 match_id = Array{Int, 1}(undef, 6147);
 for i in 1:6147
     
