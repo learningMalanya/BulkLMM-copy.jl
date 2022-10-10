@@ -2,6 +2,20 @@ using Helium;
 using DataFrames;
 using CSV;
 using GeneNetworkAPI;
+using DelimitedFiles;
+using LinearAlgebra;
+using Optim;
+using Distributions;
+using Test;
+using BenchmarkTools;
+using Random;
+
+include("../../src/scan.jl");
+include("../../src/lmm.jl");
+include("../../src/parallel_helpers.jl");
+include("../../src/util.jl");
+include("../../src/wls.jl");
+
 
 pheno_10441 = get_pheno("HSNIH-Palmer", "10441");
 geno_filename = "HSNIH-Palmer.he";
