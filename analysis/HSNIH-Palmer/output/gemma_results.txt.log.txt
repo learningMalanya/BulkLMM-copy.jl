@@ -10,7 +10,7 @@
 ##
 ## Command Line Input = /home/xyu/software/GEMMA/gemma-0.98.5-linux-static-AMD64 -g geno.txt -p pheno.txt -k output/kinship.cXX.txt -lmm 2 -o gemma_results.txt 
 ##
-## Date = Sun Oct  9 00:51:48 2022
+## Date = Mon Oct 10 13:28:51 2022
 ##
 ## Summary Statistics:
 ## number of total individuals = 4094
@@ -29,9 +29,9 @@
 ## se(beta) =   0.175574
 ##
 ## Computation Time:
-## total computation time = 15.3624 min 
+## total computation time = 15.9706 min 
 ## computation time break down: 
-##      time on eigen-decomposition = 3.72993 min 
-##      time on calculating UtX = 4.03365 min 
-##      time on optimization = 4.71017 min 
+##      time on eigen-decomposition = 3.98488 min 
+##      time on calculating UtX = 4.32856 min 
+##      time on optimization = 4.58159 min 
 ##
