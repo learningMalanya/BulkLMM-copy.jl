@@ -10,7 +10,7 @@
 ##
 ## Command Line Input = /home/zyu20/Softwares/gemma-0.98.5-linux-static-AMD64 -g BXDgeno_prob_bimbam.txt -p BXDpheno_bimbam.txt -gk 1 -o kinship 
 ##
-## Date = Fri Oct 28 13:02:25 2022
+## Date = Fri Oct 28 17:02:54 2022
 ##
 ## Summary Statistics:
 ## number of total individuals = 79
@@ -21,7 +21,7 @@
 ## number of analyzed SNPs/var = 7321
 ##
 ## Computation Time:
-## total computation time = 0.0222016 min 
+## total computation time = 0.0239382 min 
 ## computation time break down: 
-##      time on calculating relatedness matrix = 0.00437 min 
+##      time on calculating relatedness matrix = 0.0046294 min 
 ##
