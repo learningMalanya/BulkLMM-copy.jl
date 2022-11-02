@@ -1,6 +1,6 @@
-
 /Manifest.toml
 /docs/build/
 *.he
 *.txt
 *.DS_Store
+*.csv
