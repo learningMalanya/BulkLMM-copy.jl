@@ -3,14 +3,14 @@
 ## Build profile    = /gnu/store/8rvid272yb53bgascf5c468z0jhsyflj-profile
 ## GCC version      = 7.5.0
 ## GSL Version      = 2.6
-## OpenBlas         = OpenBLAS 0.3.9  - OpenBLAS 0.3.9 DYNAMIC_ARCH NO_AFFINITY SkylakeX MAX_THREADS=128
-##   arch           = SkylakeX
-##   threads        = 8
+## OpenBlas         = OpenBLAS 0.3.9  - OpenBLAS 0.3.9 DYNAMIC_ARCH NO_AFFINITY Haswell MAX_THREADS=128
+##   arch           = Haswell
+##   threads        = 32
 ##   parallel type  = threaded
 ##
-## Command Line Input = /home/zyu20/Softwares/gemma-0.98.5-linux-static-AMD64 -g BXDgeno_prob_bimbam.txt -p BXDpheno_bimbam.txt -k output/kinship.cXX.txt -lmm 2 -lmax 1000000 -o gemma_results.txt 
+## Command Line Input = /home/xyu/software/GEMMA/gemma-0.98.5-linux-static-AMD64 -g BXDgeno_prob_bimbam.txt -p BXDpheno_bimbam.txt -k output/kinship.cXX.txt -lmm 2 -lmax 1000000 -o gemma_results.txt 
 ##
-## Date = Mon Oct 31 16:20:53 2022
+## Date = Wed Nov  2 17:06:23 2022
 ##
 ## Summary Statistics:
 ## number of total individuals = 79
@@ -19,19 +19,19 @@
 ## number of phenotypes = 1
 ## number of total SNPs/var = 7321
 ## number of analyzed SNPs/var = 7321
-## REMLE log-likelihood in the null model = -50.2408
-## MLE log-likelihood in the null model = -48.1785
-## pve estimate in the null model = 0.813567
-## se(pve) in the null model = 0.0950615
-## vg estimate in the null model = 0.221055
-## ve estimate in the null model = 0.0490898
-## beta estimate in the null model =   11.2201
-## se(beta) =   0.0249277
+## REMLE log-likelihood in the null model = 71.026
+## MLE log-likelihood in the null model = 72.4398
+## pve estimate in the null model = 9.69076e-06
+## se(pve) in the null model = 0.209474
+## vg estimate in the null model = 9.47531e-08
+## ve estimate in the null model = 0.00947531
+## beta estimate in the null model =   6.92324
+## se(beta) =   0.0109517
 ##
 ## Computation Time:
-## total computation time = 0.060126 min 
+## total computation time = 0.121636 min 
 ## computation time break down: 
-##      time on eigen-decomposition = 0.000269417 min 
-##      time on calculating UtX = 0.000317583 min 
-##      time on optimization = 0.0246535 min 
+##      time on eigen-decomposition = 0.000548617 min 
+##      time on calculating UtX = 0.00763927 min 
+##      time on optimization = 0.0440848 min 
 ##
